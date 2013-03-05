@@ -1,41 +1,35 @@
-<!-- ================================== ADDING LOOPS ====================================== 	
+<!-- ================================== ADDING POT LOOP NAVIGATION ====================================== 	
 	
-	The loop can be placed on any theme php page where you want a post to display.
-	By default the loop will display the contents (depending on what you ask for) of each post. 
-	The main blog loop is usually placed inside a theme file named loop-index.php
+	Because a site could have hundreds of posts, it is typically to divid the posts up into differnt pages.
+	You can do this by setting your blog post count in the Settings > Reading ... tab of your dashboard.
+	Once that is set you will only see the number of posts you indicated on the blog page. In order 
+	to see the rest of your posts you need to add navigation to go to the next and previous posts. 
 	
-	To read more on loops visit: http://codex.wordpress.org/The_Loop
+	This is done by adding the <?php posts_nav_link(); ?> method or <?php post_paginate();?>
+	Note that if you use the <?php post_paginate();?> you must first add the required functions to the function.php file. 
+	
+	To read more on loops visit: http://codex.wordpress.org/
 	
 -->	
 
 
-<!-- ================================== ESSENTIAL LOOP CODE ====================================== -->	
+<!-- ================================== ESSENTIAL PLACING OF POST LINK ====================================== -->	
 				<?php if (have_posts()):while(have_posts()):the_post();?> 
 				<!-- checks if there are posts, if so, while there are still posts..-->
 				
-					<?php the_title(); ?>
-					<!-- displayes the title of the post -->
+					<!-- your post set up goes here -->
 				
-					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"> </a>
-					<!-- link that goes around title, to link to post -->
-				
-					<?php the_time('M,d');?>
-					<!-- displayes the post time/date -->
-				
-					<?php comments_number('0','1','%');?>
-					<!-- displayes the comment count -->
-				
-					<?php the_author(); ?>
-					<!-- displays the author of the post -->
-				
-					<?php the_excerpt();?>
-					<!-- displays the post excerpt, if no excerpt then it displays the first few lines of the post -->
-				
-					<?php the_content(); ?>
-					<!--displays the post content, usually used only on the single.php (single post page) -->
-				
-           		<?php endwhile; else:?>
-           		<!-- end the while; other wise if there are no posts to begin with -->
+           		<?php endwhile; ?>
+           		<!-- end the while -->
+           		
+           		<?php posts_nav_link(); ?>
+           		<!-- basic previous and next link, or use -->
+           		 
+           		 <?php post_paginate();?>
+           		<!-- paginated links -->
+           		
+           		<?else:?>
+           		<!-- other wise if there are no posts to begin with -->
 					<?php _e('Sorry, no posts at this time');?>
 					<!-- echos (prints) sorry message to screen -->
 				<?php endif; ?>				
@@ -79,7 +73,14 @@
 							</div>
 						</article>
 																			
-           					<?php endwhile; else:?>
+           			<?php endwhile; ?>
+<!-- ================================== BASIC POST LOOP NAV  EXAMPLE ====================================== -->           			
+           				<nav class="post-1">
+							<?php posts_nav_link(); ?>
+						</nav>
+<!-- End Post Loop Nav -->       
+   					
+           			<?php else:?>
 						<?php _e('Sorry, no posts at this time');?>
 					<?php endif; ?>
 
@@ -119,9 +120,21 @@
 					
 					</article>				
 				
-				<?php endwhile; else:?>
+				<?php endwhile;?>
+<!-- ================================== POST LOOP NAV WITH CUSTOM TEXT ====================================== -->					
+					<nav class="post-2">
+						<div class="Lfloat">
+							<?php previous_posts_link('Newer Stories');?>
+						</div>
+						<div class="Rfloat">
+							<?php next_posts_link('Older Stories');?>
+						</div>
+					</nav>
+					
+<!-- End Post Loop Nav --> 					
+				<?php else:?>
 					<?php _e('Sorry, no posts at this time');?>
-				<?php endif; ?>				
+				<?php endif; ?>							
 
 <!-- End WP Loop -->			
 			</div><!-- End div #thumLoop-->
@@ -162,7 +175,14 @@
 					</article>
 				
 				
-				<?php endwhile; else:?>
+				<?php endwhile; ?>
+<!-- ================================== PAGINATED POST LOOP NAV ====================================== -->
+					<nav id="posts-3">
+						<?php post_paginate();?>
+					</nav>	
+<!-- END PAGINATED POST LOOP NAV -->
+				
+				<?php else:?>
 					<?php _e('Sorry, no posts at this time');?>
 				<?php endif; ?>				
 

@@ -1,0 +1,117 @@
+/* ========== LOOP STYLES =============
+	Wordpress themes are really all about the stylesheet.
+	In order for each loop to really look differently you need to style them differently.
+	Here are a few examples for styling the loops from the sample loop-index.php file.
+*/
+
+/*--- bLooop --*/
+#bLoop .title{
+	font-weight:normal;
+	margin-bottom:12px;
+}
+
+#bLoop .title a{
+	text-decoration:none;
+}
+
+#bLoop .info{
+	float:left;
+	border-right:1px solid #333;
+}
+
+#bLoop .info span{
+	display:block;
+	margin-right:15px;
+	font-size:12px;
+}
+
+#bLoop .excerpt{
+	float:left;
+	width:80%;
+}
+
+#bLoop article{
+	clear:both;
+}
+
+
+/*----- thumLoop ---- */
+#thumLoop .title {
+	font-weight:normal;
+	margin-bottom:12px;
+}
+
+#thumLoop .title a{
+	text-decoration: none;
+}
+
+#thumLoop .info{
+	font-size:.6 em;
+	margin-bottom:12px;
+}
+
+#thumLoop .info span{
+	font-size:12px;
+	margin-right:5px;
+	border-right:1px solid #333;
+}
+
+#thumLoop  figure{
+/*This resets the image size for the thumbnails in the loop*/
+	width:100%;
+	padding:10px;
+	background:#ccc;
+	border:1px solid #000;
+	margin-bottom:24px;
+}
+
+#thumLoop img{
+	width:auto;
+	max-width:100%;
+}
+
+/*----- Loop3 ---- */
+#Loop3 .title {
+	font-weight:normal;
+	margin-bottom:12px;
+	border-bottom:2px solid rgba(0,0,255,1);
+}
+
+#Loop3 .title a{
+	text-decoration: none;
+	clear:both;
+}
+
+#Loop3 .info{
+	font-size:.6 em;
+	margin-bottom:12px;
+}
+
+#Loop3 .info span{
+	font-size:12px;
+	margin-right:5px;
+	border-right:1px solid #333;
+}
+
+
+
+#Loop3  figure{
+/*This resets the image size for the thumbnails in the loop*/
+	width:40%;
+	padding:10px;
+	background:#ccc;
+	border:1px solid #000;
+	margin-bottom:24px;
+	float:left;
+	margin-right: 10px;
+}
+
+#Loop3 img{
+	width:auto;
+	height:auto;
+	max-width:100%;
+}
+
+#Loop3 article{
+	clear:both;
+}
