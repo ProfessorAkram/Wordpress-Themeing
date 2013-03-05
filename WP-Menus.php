@@ -1,5 +1,3 @@
-<?php
-
 /* =================================== SET UP (functions.php) ======================================= */
 
 //In order to enable the use of Wordpress Menus you need to add the following to your functions.php: 
@@ -26,8 +24,7 @@ function to your functions.php file */
       //Call the my_wp_nav_menu_args function
       add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
 
-?>
-<?php
+
 
 /* ================================== ADDING IT TO THE THEME ====================================== */
 
@@ -35,7 +32,6 @@ function to your functions.php file */
 
 
 //Placing a single menu or if more menus exsist will place the first created menu
-?>
    
     <?php wp_nav_menu(); ?>
 
