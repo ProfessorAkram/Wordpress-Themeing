@@ -27,6 +27,7 @@ function to your functions.php file */
       add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
 
 ?>
+<?php
 
 /* ================================== ADDING IT TO THE THEME ====================================== */
 
@@ -34,6 +35,7 @@ function to your functions.php file */
 
 
 //Placing a single menu or if more menus exsist will place the first created menu
+?>
    
     <?php wp_nav_menu(); ?>
 
