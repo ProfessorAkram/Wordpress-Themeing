@@ -26,7 +26,7 @@ function to your functions.php file */
       //Call the my_wp_nav_menu_args function
       add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
 
-
+?>
 
 /* ================================== ADDING IT TO THE THEME ====================================== */
 
@@ -41,4 +41,4 @@ function to your functions.php file */
 //To place a sepcific menu you will need to use the code below, where 'Menu Name' is the name you set for the menu
     
     <?php wp_nav_menu( array('menu' => 'Menu Name ' )); ?>
-?>
+
