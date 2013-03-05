@@ -1,5 +1,5 @@
 /* =================================== SET UP (functions.php) ======================================= */
-
+<?php
 //In order to enable the use of Wordpress Menus you need to add the following to your functions.php: 
 
    
@@ -25,7 +25,7 @@ function to your functions.php file */
       add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
 
 
-
+?>
 
 /* ================================== ADDING IT TO THE THEME ====================================== */
 
