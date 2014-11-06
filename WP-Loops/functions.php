@@ -37,5 +37,4 @@ function activate_semantic_markup() {
 add_action( 'after_setup_theme', 'activate_semantic_markup' );
 
 /* ======================================== END SET UP  ============================================= */
-=
 ?>
